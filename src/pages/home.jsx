@@ -63,7 +63,6 @@ function Home() {
         modules={[Navigation, Thumbs]}
         className="h-[500px] w-full"
       >
-        {/* Swiper Slide'lar */}
         <SwiperSlide>
           <div className="relative">
             <img
@@ -98,7 +97,6 @@ function Home() {
         </SwiperSlide>
       </Swiper>
 
-      {/* Thumbnail Swiper */}
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}
@@ -109,7 +107,6 @@ function Home() {
         modules={[Thumbs]}
         className="mt-4 h-[100px] w-full"
       >
-        {/* Thumbnails */}
         <SwiperSlide>
           <img
             src={img}
