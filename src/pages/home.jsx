@@ -56,7 +56,6 @@ function Home() {
       </header>
       <main>
       <div className="w-full h-screen bg-black text-white">
-      {/* Asosiy Swiper */}
       <Swiper
         loop={true}
         navigation={true}
@@ -88,7 +87,7 @@ function Home() {
               alt="Movie 2"
               className="w-full h-[500px] object-cover rounded-lg"
             />
-            <div className="absolute bottom-10 left-10 text-white">
+            <div className="absolute flex flex-col justify-center items-center left-0 bottom-10 right-0 top-45 text-white">
               <h2 className="text-4xl font-bold">Another Movie</h2>
               <p className="text-sm mt-2">2023 • Action • 2ч 10м • EN • 13+</p>
               <button className="mt-4 py-2 px-4 bg-[#C61F1F] text-white rounded-md">
@@ -115,41 +114,6 @@ function Home() {
           <img
             src={img}
             alt="Kung Fu Panda 4 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Movie 2 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Movie 2 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Movie 2 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Movie 2 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Movie 2 Thumbnail"
             className="h-[100px] object-cover rounded-lg"
           />
         </SwiperSlide>
