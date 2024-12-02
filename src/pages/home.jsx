@@ -1,20 +1,21 @@
-import Афиша from '../assets/images/Афиша.svg'
-import siteLogo from '../assets/images/siteLogo.svg'
-import Билеты from '../assets/images/Билеты.svg'
-import Сеансы from '../assets/images/Сеансы.svg'
-import Поиск from '../assets/images/Поиск.svg'
-import img from '../assets/images/img.png'
+import Афиша from "../assets/images/Афиша.svg";
+import siteLogo from "../assets/images/siteLogo.svg";
+import Билеты from "../assets/images/Билеты.svg";
+import Сеансы from "../assets/images/Сеансы.svg";
+import Поиск from "../assets/images/Поиск.svg";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+
 function Home() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   return (
     <div>
-      <header className="flex justify-between items-center container mx-auto xl opacity-[#00000080] py-[16px]">
+      <header className="flex justify-between w-full items-center container mx-auto xl opacity-[#00000080] py-[16px]">
         <a href="/">
           <img src={siteLogo} alt="Logo" />
         </a>
@@ -55,76 +56,62 @@ function Home() {
         </div>
       </header>
       <main>
-      <div className="w-full h-screen bg-black text-white">
-      <Swiper
-        loop={true}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[Navigation, Thumbs]}
-        className="h-[500px] w-full"
-      >
-        <SwiperSlide>
-          <div className="relative">
-            <img
-              src={img}
-              alt="Kung Fu Panda 4"
-              className="w-full h-[500px] object-cover rounded-lg"
-            />
-            <div className="absolute bottom-10 left-10 text-white">
-              <h2 className="text-4xl font-bold">Kung Fu Panda 4</h2>
-              <p className="text-sm mt-2">2024 • Комедия • 1ч 34м • EN • 6+</p>
-              <button className="mt-4 py-2 px-4 bg-[#C61F1F] text-white rounded-md">
-                Смотреть
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative">
-            <img
-              src={img}
-              alt="Movie 2"
-              className="w-full h-[500px] object-cover rounded-lg"
-            />
-            <div className="absolute flex flex-col justify-center items-center left-0 bottom-10 right-0 top-45 text-white">
-              <h2 className="text-4xl font-bold">Another Movie</h2>
-              <p className="text-sm mt-2">2023 • Action • 2ч 10м • EN • 13+</p>
-              <button className="mt-4 py-2 px-4 bg-[#C61F1F] text-white rounded-md">
-                Смотреть
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        loop={true}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[Thumbs]}
-        className="mt-4 h-[100px] w-full"
-      >
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Kung Fu Panda 4 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={img}
-            alt="Movie 2 Thumbnail"
-            className="h-[100px] object-cover rounded-lg"
-          />
-        </SwiperSlide>
-      </Swiper>
-    </div>
-
+        <section className="relative">
+          <Swiper
+            modules={[Navigation, Thumbs]}
+            navigation
+            thumbs={{ swiper: thumbsSwiper }}
+            className="main-slider"
+          >
+            <SwiperSlide>
+              <div className="relative">
+                <img
+                  className="w-full h-[400px] object-cover"
+                  src="https://via.placeholder.com/1200x400"
+                  alt="Kung Fu Panda 4"
+                />
+                <div className="absolute bottom-0 left-0 p-8 text-white bg-gradient-to-t from-black via-transparent to-transparent text-center">
+                  <h2 className="text-4xl font-bold text-center">Kung Fu Panda 4</h2>
+                  
+                  <p className="mt-2 text-lg">2024 • Комедия • 1ч 34м • EN • 6+</p>
+                  <button className="mt-4 px-6 py-3 bg-[#C61F1F] rounded-[12px] font-medium text-white">
+                    Смотреть
+                  </button>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className="w-full h-[400px] object-cover"
+                src="https://via.placeholder.com/1200x400"
+                alt="Other Slide"
+              />
+            </SwiperSlide>
+          </Swiper>
+          <Swiper
+            onSwiper={setThumbsSwiper}
+            slidesPerView={5}
+            spaceBetween={10}
+            className="thumb-slider mt-4"
+          >
+            <SwiperSlide>
+              <img
+                className="w-[100px] h-[60px] object-cover"
+                src="https://via.placeholder.com/100x60"
+                alt="Thumbnail 1"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className="w-[100px] h-[60px] object-cover"
+                src="https://via.placeholder.com/100x60"
+                alt="Thumbnail 2"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </section>
       </main>
+
     </div>
   );
 }
